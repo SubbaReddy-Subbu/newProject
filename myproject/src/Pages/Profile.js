@@ -6,6 +6,14 @@ import {  Avatar } from "flowbite-react";
 function Profile() {
   const [open, setOpen] = useState(false);
   const cancelButtonRef = useRef(null);
+const getData = () => {
+  let DobInput = document.getElementById("Dob").value;
+ 
+  document.getElementById(
+    "get"
+  ).innerHTML = `My Name is :${DobInput} `;
+  
+};
   return (
     <div className="my-auto flex">
       <button
@@ -55,7 +63,7 @@ function Profile() {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <div className="inline-block   align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-[600px] sm:w-full ">
+              <div className="inline-block   align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle md:max-w-[800px] sm:w-full ">
                 <div className="relative flex h-10  bg-blue-700 justify-between">
                   <div className="mx-auto flex justify-center text-2xl text-white">
                     Profile Detaile's
@@ -70,12 +78,17 @@ function Profile() {
                   </div>
                 </div>
                 <div className="w-100">
-                  <div className=" sm:w-1/2">
-                    <img src="https://png.pngtree.com/png-vector/20221207/ourmid/pngtree-letter-s-r-beauty-monogram-serif-logo-design-png-image_6514468.png" alt="profile" className="w-full"/>
+                  <div className=" md:w-1/2">
+                    <img src="https://png.pngtree.com/png-vector/20221207/ourmid/pngtree-letter-s-r-beauty-monogram-serif-logo-design-png-image_6514468.png" alt="profile" className="w-full flex mx-auto sm:w-[200px]"/>
                     <div className="flex justify-between w-[80%] mx-auto"><h2 className="flex my-auto text-lg">Profile name : </h2><p className="text-2xl flex text-black border-b-3">Subba reddy</p>
                     </div>
                     </div>
-                  <div className="sm:w-1/2"></div>
+                  <div className="md:w-1/2">
+                  <p>This is the profile section</p>
+                  <p>Date of Birth : <input type="date" id="Dob" /></p>
+                  <button onClick={getData}>get</button>
+                  <p className="get"></p>
+                  </div>
                 </div>
               </div>
             </Transition.Child>
