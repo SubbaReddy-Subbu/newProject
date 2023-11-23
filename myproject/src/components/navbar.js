@@ -1,5 +1,6 @@
-import {  Avatar, Badge } from "flowbite-react";
+import {  Badge } from "flowbite-react";
 import { BellIcon } from "@heroicons/react/24/outline";
+import Profile from "../Pages/Profile"
 
 export default function MyPage() {
   return (
@@ -100,11 +101,8 @@ export default function MyPage() {
                 />
               </button>
             </group>
-            <Avatar
-              className="realtive"
-              img="https://png.pngtree.com/png-vector/20221207/ourmid/pngtree-letter-s-r-beauty-monogram-serif-logo-design-png-image_6514468.png"
-              bordered
-            />
+           
+            <Profile />
           </div>
         </div>
       </nav>
