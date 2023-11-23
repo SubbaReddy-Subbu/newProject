@@ -34,7 +34,10 @@ const Homepage = () => {
                 <input id="A" type='number' />
                 <br />
                 <label htmlFor="B">Value Of B :  </label>
-                <input id="B" type='number' classname=" 2xl border-b-2 border-red-300 border-0"/>
+
+                <input id="B" type='number' classname=" 2xl border-b-2 border-red-300 border-0"/
+                <input id="B" type='number' classname="text-2xl border-b-2 border-red-300 border-0"/>
+
                 <br />
                  </div>
                
