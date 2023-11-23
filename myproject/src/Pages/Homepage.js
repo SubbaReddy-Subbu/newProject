@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import Newuser from "../components/Newuser"
 
 const Homepage = () => {
         function Addition() {
@@ -26,6 +27,7 @@ const Homepage = () => {
         }
     
         return (
+            <>
             <div className=" w-[80%] mx-auto my-6">
                 Calculate
                 <br />
@@ -35,7 +37,7 @@ const Homepage = () => {
                 <br />
                 <label htmlFor="B">Value Of B :  </label>
 
-                <input id="B" type='number' classname=" 2xl border-b-2 border-red-300 border-0"/
+                <input id="B" type='number' classname=" 2xl border-b-2 border-red-300 border-0"/>
                 <input id="B" type='number' classname="text-2xl border-b-2 border-red-300 border-0"/>
 
                 <br />
@@ -49,6 +51,8 @@ const Homepage = () => {
     
                <p className='m-4'>Results : <p id="Results" className=" text-2xl font-bold "></p> </p>
             </div>
+            <Newuser />
+            </>
         )
    
 }
