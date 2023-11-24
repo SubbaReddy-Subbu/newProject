@@ -77,9 +77,9 @@ const getData = () => {
                     ></XMarkIcon>
                   </div>
                 </div>
-                <div className="w-100">
+                <div className="w-100 md:flex">
                   <div className=" md:w-1/2">
-                    <img src="https://png.pngtree.com/png-vector/20221207/ourmid/pngtree-letter-s-r-beauty-monogram-serif-logo-design-png-image_6514468.png" alt="profile" className="w-full flex mx-auto sm:w-[200px]"/>
+                    <img src="https://png.pngtree.com/png-vector/20221207/ourmid/pngtree-letter-s-r-beauty-monogram-serif-logo-design-png-image_6514468.png" alt="profile" className="w-1/2 flex mx-auto max-w-[150px]"/>
                     <div className="flex justify-between w-[80%] mx-auto"><h2 className="flex my-auto text-lg">Profile name : </h2><p className="text-2xl flex text-black border-b-3">Subba reddy</p>
                     </div>
                     </div>
