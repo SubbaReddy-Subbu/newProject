@@ -23,19 +23,9 @@ app.post("/login",(req,res)=>{
 })
 
 app.post("/register",(req,res)=>{
-    // const {email} =req.body;
-    // userModel.findOne({email: email}).then(user=>{
-    //     if(user){
-    //         if(user.email===email){
-    //             res.json("user already existing")
-    //         }
-    //     }else{
      userModel.create(req.body)
     .then(Users => res.json(Users))
     .catch((err)=>res.json(err))
-    //     }
-    // })
-   
 })
 
 app.listen(3001,()=>{

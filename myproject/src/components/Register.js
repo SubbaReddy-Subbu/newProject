@@ -37,7 +37,7 @@ function LoginForm() {
                     <label for="Email">Enter your Email :</label><br/>
                     <input className='p-1 m-2 bg-slate border-0 border-b-2 bg-slate-300 w-full' type='email' id='Email' value={Email} onChange={(e)=>setEmail(e.target.value)}/>
                     <br/>
-                    <lable for="Password">Password :</lable> <br/>
+                    <label for="Password">Password :</label> <br/>
                     <input className='p-1 m-2 bg-slate border-0 border-b-2 bg-slate-300 w-full' type='password' id='password' value={password} onChange={(e)=>setpassword(e.target.value)}/>
                     <br/>
                     <button className='bg-blue-500 hover:shadow-xl  my-3 mx-auto flex rounded-lg px-3 py-1 text-white text-2xl hover:cursor-pointer hover:bg-blue-700' type='submit'>Register</button>

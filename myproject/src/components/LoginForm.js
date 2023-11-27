@@ -26,11 +26,11 @@ const handleSubmit=(e)=>{
             <div className='p-4  bg-slate-300'>
                 <h1 className='text-3xl text-black'>Login</h1>
                 <form onSubmit={handleSubmit} className='p-3 rounded-md mt-4'>
-                    <lable for="Email" >Enter E-mail address : </lable>
+                    <label for="Email" >Enter E-mail address : </label>
                     <br/>
                     <input type='email' id='Email' value={Email} onChange={(e)=>setEmail(e.target.value)}/>
                     <br/>
-                    <lable for="password">Enter password :</lable> <br/>
+                    <label for="password">Enter password :</label> <br/>
                     <input type='password' id='password' value={password} onChange={(e)=>setpassword(e.target.value)}/>
                     <p>Forgot password</p>
                     <button className='bg-blue-500 hover:shadow-xl  my-3 mx-auto flex rounded-lg px-3 py-1 text-white text-2xl hover:cursor-pointer hover:bg-blue-700' type='submit'>Login</button>
