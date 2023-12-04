@@ -1,29 +1,35 @@
-import Layout from "./Layout.js/Layout";
+import React from "react";
+import { Routes, Route, BrowserRouter, Outlet } from "react-router-dom";
+import Layout from "./Layout/Layout";
 import Home from "./Pages/Homepage";
-import Login from "./components/LoginForm";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Services from "./Pages/Services";
 import { Nopage } from "./Pages/Nopage";
-// import Layout2 from "./Layout.js/Layout2";
-import Register from "./components/Register";
 import "./App.css";
-
-import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-        <Route path="register" element={<Register />} />
-          <Route path="Login" element={<Login />} />
-          <Route index element={<Layout />} />
-          <Route path="/" element={<Home />} />
-          <Route path="services" element={<Services />} />
-          <Route path="about" element={<About />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<Nopage />} />
+          {/* The 'Layout' component wraps all the routes */}
+          <Route
+            path="/"
+            element={
+              <Layout>
+                {/* The 'Outlet' is used within the 'Layout' to render child components */}
+                <Outlet />
+              </Layout>
+            }
+          >
+            {/* Child routes are defined inside the 'Route' element */}
+            <Route index element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<Nopage />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
