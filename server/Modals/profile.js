@@ -26,6 +26,10 @@ const profileSchema = new Schema({
     Gender: {
         type: String,
         required: true
+    }, 
+    Id: {
+         type: Number, 
+         unique: true 
     }
 });
 // Add auto-increment plugin

@@ -4,7 +4,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser")
 
 const userModel = require("./Modals/User");
-const ProfileModal = require("./Modals/profile")
+const ProfileSchema = require("./Modals/profile")
 const app =express();
 
 app.use(express.json());
@@ -33,20 +33,25 @@ mongoose.connect("mongodb+srv://subbareddydaginti406:subbareddy@cluster0.osu1rar
 //     .catch((err)=>res.json(err))
 // })}
 
-app.post('/Profile',(req,res)=>{
-    ProfileModal.create(req.body)
-    .then(profile => res.json(profile))
-    .catch((err)=>res.json(err))
-   
+app.post('/Profile',async(req,res)=>{
+    // const NewProfile = ProfileModal.create(req.body)
+    try {
+      const newProfile = new ProfileSchema(req.body);
+      await newProfile.save();
+      return res.json((await ProfileSchema.find()));
+  } catch (err) {
+      console.log(err);
+  }
+
 })
 
 app.delete("/deleteall",(req,res)=>{
-    ProfileModal.deleteMany()
+  ProfileSchema.deleteMany()
     return res.send('Success fully Delete')
 })
 app.delete("/delete/:id", async (req, res) => {
     try {
-      const deletedProfile = await ProfileModal.findByIdAndDelete(req.params.id);
+      const deletedProfile = await ProfileSchema.findByIdAndDelete(req.params.id);
   
       if (!deletedProfile) {
         return res.status(404).json({ message: 'Profile not found' });
@@ -61,7 +66,7 @@ app.delete("/delete/:id", async (req, res) => {
 
 app.get('/getProfile',async(req,res)=>{
     try{
-        return res.json(await ProfileModal.find());
+        return res.json(await ProfileSchema.find());
 
     }catch(err){
         console.log(err)
